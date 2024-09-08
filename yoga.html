@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga App</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+    }
+
+    .header {
+      background-color: #ffcccb;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 4px solid #ffb6c1;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ff1493;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      margin: 5px 0 0 0;
+      color: #ff69b4;
+    }
+
+    .yoga-poses {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .yoga-poses h2 {
+      font-size: 2rem;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    .pose {
+      display: inline-block;
+      margin: 15px;
+      text-align: center;
+    }
+
+    .pose img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      border: 4px solid #ffcccb;
+    }
+
+    .pose h3 {
+      font-size: 1.2rem;
+      color: #ff1493;
+      margin-top: 10px;
+    }
+
+    .modal {
+      display: flex;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content p {
+      font-size: 1.5rem;
+      color: #ff1493;
+      margin-bottom: 20px;
+    }
+
+    .btn-yes,
+    .btn-no {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-yes {
+      background-color: #32cd32;
+      color: white;
+    }
+
+    .btn-no {
+      background-color: #ff4c4c;
+      color: white;
+    }
+
+    .about {
+      padding: 40px;
+    }
+
+    button {
+      background: #ff1493;
+      color: white;
+      margin: 40px auto;
+      padding: 10px;
+      border: 6px brown;
+      border-radius: 10px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: #ff1493;
+      background: white
+    }
+
+    .footer {
+      background-color: #ffffe0;
+      text-align: center;
+      padding: 10px;
+      border-top: 4px solid #fffacd;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .footer p {
+      margin: 5px;
+      font-size: 12px;
+      color: #ff1493;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Yoga Time</h1>
+    <p>Your personal yoga companion</p>
+  </header>
+
+  <section class="yoga-poses">
+    <h2>Popular Yoga Poses</h2>
+    <div class="pose">
+      <img src="pose1.png" alt="Pose 1">
+      <h3>Mountain Pose</h3>
+    </div>
+    <div class="pose">
+      <img src="pose2.png" alt="Pose 2">
+      <h3>Warrior Pose</h3>
+    </div>
+    <div class="pose">
+      <img src="pose3.png" alt="Pose 3">
+      <h3>Easy Pose</h3>
+    </div>
+
+  </section>
+  <div class="about">
+    <p>
+      It’s no secret that practicing yoga
+      can boost your mental, physical, and
+      spiritual health. This ancient practice is
+      known for its ability to reduce stress,
+      ease minor pain, relieve anxiety,
+      and improve the quality of your sleep.
+      The most important thing to remember when
+      starting a yoga practice (or any new health habit)
+      is that the key to success is doing it routinely.
+      Start small and manageable...
+    </p>
+    <button>Discover more</button>
+    <br />
+  </div>
+
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <p>Do you like my page?</p>
+      <button class="btn-yes" onclick="handleFeedback('yes')">Yes</button>
+      <button class="btn-no" onclick="handleFeedback('no')">No</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Yoga App. Coded by I.Skupinska</p>
+  </footer>
+  <script>
+
+    function handleFeedback(response) {
+      const modal = document.getElementById('feedbackModal');
+
+      if (response === 'yes') {
+        alert('Thank you for liking the page!');
+      } else if (response === 'no') {
+        alert('Sorry to hear that. I will try to improve!');
+      }
+
+
+      modal.style.display = 'none';
+    }
+
+
+    window.onload = function () {
+      const modal = document.getElementById('feedbackModal');
+      modal.style.display = 'flex';
+    }
+  </script>
+</body>
+
+</html>
